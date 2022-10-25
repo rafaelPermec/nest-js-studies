@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Header } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Header, Body } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -17,12 +17,12 @@ export class AppController {
   }
 
   @Post('/monocard/devs')
-  postMono(): string[] {
-    return this.appService.postMono();
+  postMono(@Body('newDev') dev: string): string[] {
+    return this.appService.postMono(dev);
   }
 
   @Delete('/monocard/devs')
-  deleteMono(): string[] {
-    return this.appService.deleteMono();
+  deleteMono(@Body('oldDev') dev: string): string[] {
+    return this.appService.deleteMono(dev);
   }
 }
