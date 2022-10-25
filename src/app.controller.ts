@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('/monocard/devs')
+  getMono(): string[] {
+    return this.appService.getMono();
+  }
 }
