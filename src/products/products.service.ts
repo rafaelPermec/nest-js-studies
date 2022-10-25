@@ -5,11 +5,11 @@ import { Product } from './products.model';
 export class ProductsService {
   products: Product[] = [];
 
-  insertProduct(prod: Omit<Product, 'id'>): Product[] {
+  insertProduct(prod: Omit<Product, 'id'>): string {
     const { title, price, description } = prod;
-    const newDate = Date.toString();
+    const newDate = new Date().toString();
     const newProduct = new Product(newDate, title, description, price);
     this.products.push(newProduct);
-    return this.products;
+    return newDate;
   }
 }

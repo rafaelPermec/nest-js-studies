@@ -17,7 +17,8 @@ export class ProductsController {
     // @Body('title') prodTitle: string,
     // @Body('description') prodDescription: string,
     // @Body('price') prodPrice: number,
-  ): any {
-    this.productsService.insertProduct(completeProduct);
+  ) {
+    const generatedId = this.productsService.insertProduct(completeProduct);
+    return { id: generatedId };
   }
 }
