@@ -8,7 +8,7 @@ export class AppService {
     'Igor',
     'Stefferson',
     'André',
-    'Gustavo',
+    'Gabriel',
     'Perdigão',
   ];
 

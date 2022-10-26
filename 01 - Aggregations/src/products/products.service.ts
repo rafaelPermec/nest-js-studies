@@ -3,7 +3,11 @@ import { Product } from './products.model';
 
 @Injectable()
 export class ProductsService {
-  products: Product[] = [];
+  private products: Product[] = [];
+
+  readAllProducts() {
+    return [...this.products];
+  }
 
   insertProduct(prod: Omit<Product, 'id'>): string {
     const { title, price, description } = prod;
